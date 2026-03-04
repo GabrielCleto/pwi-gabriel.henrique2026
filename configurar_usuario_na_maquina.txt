@@ -7,8 +7,8 @@ git config --global --unset-all user.name
 
 echo --- Configurando Usuario GitHUB ----
 
-git config --global user.name "Felipe"
-git config --global user.email lipe.almagrok@gmail.com
+git config --global user.name "GabrielCleto"
+git config --global user.email gabrielhenrique.cl2002@gmail.com
 echo --- Mostrando a configuração atual do Github no computador
 git config --list
 
