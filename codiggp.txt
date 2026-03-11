@@ -1,0 +1,17 @@
+( cod . "   esse comando bare o projeto no VsCode
+
+
+
+
+ COMANDO EM HTML
+
+<b>   Escreve em Negrito 
+<stong> Também em negrito
+<br > quebra linha 
+<Pre> Esta tag preserva os espaços e quebras de linha exatamente como você digita no código. É excelente para exibir blocos de código ou artes em texto
+<i> insere linha  	de texto em itálico 
+<hr> coloca uma linha cortando a tela em horinzontal 
+<mark> marca o texto 
+ <del> aqui deixa o texto riscado 
+ <sub>E Ele coloca o texto levemente abaixo da linha base.
+ <sup>  E Ele coloca o texto levemente acima  da linha base.
