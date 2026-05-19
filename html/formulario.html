@@ -3,18 +3,129 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Formulario</title>
+    <title>Questionário - Iniciante em Embarcados</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 15px;
+            color: #333;
+            background-color: transparent; /* Se integra perfeitamente ao iframe */
+        }
+        h2 {
+            color: #006468;
+            margin-bottom: 5px;
+        }
+        p.sub {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        .fieldset-pergunta {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            background-color: #fff; /* Fundo branco para destacar as perguntas */
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+        legend {
+            font-weight: bold;
+            color: #006468;
+            padding: 0 8px;
+        }
+        label {
+            cursor: pointer;
+            display: inline-block;
+            margin-bottom: 6px;
+            margin-left: 5px;
+        }
+        input[type="radio"], input[type="checkbox"] {
+            cursor: pointer;
+        }
+        .btn-enviar {
+            display: block;
+            width: 100%;
+            max-width: 200px;
+            background-color: rgb(6, 141, 96);
+            color: white;
+            border: none;
+            padding: 12px;
+            text-align: center;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-bottom: 20px;
+        }
+        .btn-enviar:hover {
+            background-color: #00979C;
+            transform: scale(1.02);
+        }
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            resize: vertical;
+            font-family: Arial, sans-serif;
+            box-sizing: border-box;
+        }
+    </style>
 </head>
 <body>
-<form>
-    <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
-    <label for="vehicle1"> I have a bike</label><br>
-    <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
-    <label for="vehicle2"> I have a car</label><br>
-    <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
-    <label for="vehicle3"> I have a boat</label><br><br>
-    <input type="submit" value="Submit">
-</form>
+
+    <h2>Quiz para Iniciantes</h2>
+    <p class="sub">Teste seus conhecimentos básicos sobre Sistemas Embarcados e Eletrônica!</p>
+
+    <form action="#" method="POST">
+        
+        <fieldset class="fieldset-pergunta">
+            <legend>1. Qual das seguintes placas é um Microcontrolador comum para iniciantes?</legend>
+            <input type="radio" id="p1_op1" name="placa_micro" value="arduino_uno">
+            <label for="p1_op1">Arduino Uno</label><br>
+            
+            <input type="radio" id="p1_op2" name="placa_micro" value="raspberry_pi4">
+            <label for="p1_op2">Raspberry Pi 4 (Mini Computador)</label><br>
+            
+            <input type="radio" id="p1_op3" name="placa_micro" value="desktop">
+            <label for="p1_op3">Computador Desktop Comum</label>
+        </fieldset>
+
+        <fieldset class="fieldset-pergunta">
+            <legend>2. Quais destes componentes são considerados ATUADORES? (Selecione todos que se aplicam)</legend>
+            <input type="checkbox" id="comp1" name="atuadores" value="led">
+            <label for="comp1">LED (Diodo Emissor de Luz)</label><br>
+            
+            <input type="checkbox" id="comp2" name="atuadores" value="lm35">
+            <label for="comp2">Sensor de Temperatura LM35</label><br>
+            
+            <input type="checkbox" id="comp3" name="atuadores" value="servo_motor">
+            <label for="comp3">Servo Motor</label><br>
+            
+            <input type="checkbox" id="comp4" name="atuadores" value="buzzer">
+            <label for="comp4">Buzzer (Sinalizador sonoro)</label>
+        </fieldset>
+
+        <fieldset class="fieldset-pergunta">
+            <legend>3. Qual é a principal função de um Resistor em um circuito eletrônico?</legend>
+            <input type="radio" id="p3_op1" name="funcao_resistor" value="armazenar">
+            <label for="p3_op1">Armazenar energia elétrica como uma bateria.</label><br>
+            
+            <input type="radio" id="p3_op2" name="funcao_resistor" value="limitar">
+            <label for="p3_op2">Limitar e opor resistência à passagem da corrente elétrica.</label><br>
+            
+            <input type="radio" id="p3_op3" name="funcao_resistor" value="processar">
+            <label for="p3_op3">Processar códigos e linhas de comando.</label>
+        </fieldset>
+
+        <fieldset class="fieldset-pergunta">
+            <legend>4. Qual projeto ou ideia você pretende desenvolver primeiro?</legend>
+            <textarea id="projeto_ideia" name="projeto_ideia" rows="3" placeholder="Ex: Um semáforo com Arduino, automação residencial com ESP32..."></textarea>
+        </fieldset>
+
+        <input type="submit" value="Enviar Respostas" class="btn-enviar">
+    </form>
+
 </body>
 </html>
