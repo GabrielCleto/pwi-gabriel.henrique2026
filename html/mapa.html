@@ -4,51 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Localização da Fábrica do Arduino</title>
-    <style>
-        /* Garante que o mapa ocupe toda a tela do iframe sem margens feias */
-        html, body {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            font-family: Arial, Helvetica, sans-serif;
-            background-color: #ffffff;
-        }
-        
-        /* Container para alinhar o título interno e o mapa */
-        .container-mapa {
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-            height: 100%;
-        }
-
-        .topo-mapa {
-            padding: 10px 15px;
-            background-color: #ffffff;
-            border-bottom: 1px solid #ddd;
-        }
-
-        h2 {
-            color: #006468; /* Mantém o padrão verde do seu site */
-            margin: 0;
-            font-size: 18px;
-        }
-
-        p {
-            margin: 3px 0 0 0;
-            font-size: 12px;
-            color: #666;
-        }
-
-        /* Área do Google Maps */
-        .mapa-interativo {
-            flex: 1;
-            width: 100%;
-            border: none;
-        }
-    </style>
+    <link rel="stylesheet" href="CSS/maps.css"/>
 </head>
 <body>
 
@@ -60,7 +16,7 @@
         
         <iframe 
             class="mapa-interativo"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2818.232675661448!2d7.683670976643265!3d45.06077395958564!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47886d69197ec165%3A0x6b14f49480d0d829!2sArduino%20Store%20Torino!5e0!3m2!1spt-BR!2sbr!4v1715970000000!5m2!1spt-BR!2sbr" 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2818.2139783103444!2d7.671343776602322!3d45.06118026090715!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47886d1360155555%3A0x6b4fb09a1ff08a62!2sArduino%20Store%20Torino!5e0!3m2!1spt-BR!2sbr!4v1710000000000!5m2!1spt-BR!2sbr" 
             allowfullscreen="" 
             loading="lazy" 
             referrerpolicy="no-referrer-when-downgrade">

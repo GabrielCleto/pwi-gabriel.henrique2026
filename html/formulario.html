@@ -4,74 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Questionário - Iniciante em Embarcados</title>
-    <style>
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            padding: 15px;
-            color: #333;
-            background-color: transparent; /* Se integra perfeitamente ao iframe */
-        }
-        h2 {
-            color: #006468;
-            margin-bottom: 5px;
-        }
-        p.sub {
-            font-size: 14px;
-            color: #666;
-            margin-bottom: 20px;
-        }
-        .fieldset-pergunta {
-            border: 1px solid #ddd;
-            padding: 15px;
-            margin-bottom: 15px;
-            border-radius: 8px;
-            background-color: #fff; /* Fundo branco para destacar as perguntas */
-            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
-        }
-        legend {
-            font-weight: bold;
-            color: #006468;
-            padding: 0 8px;
-        }
-        label {
-            cursor: pointer;
-            display: inline-block;
-            margin-bottom: 6px;
-            margin-left: 5px;
-        }
-        input[type="radio"], input[type="checkbox"] {
-            cursor: pointer;
-        }
-        .btn-enviar {
-            display: block;
-            width: 100%;
-            max-width: 200px;
-            background-color: rgb(6, 141, 96);
-            color: white;
-            border: none;
-            padding: 12px;
-            text-align: center;
-            border-radius: 8px;
-            font-weight: bold;
-            font-size: 16px;
-            cursor: pointer;
-            transition: 0.3s;
-            margin-bottom: 20px;
-        }
-        .btn-enviar:hover {
-            background-color: #00979C;
-            transform: scale(1.02);
-        }
-        textarea {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            resize: vertical;
-            font-family: Arial, sans-serif;
-            box-sizing: border-box;
-        }
-    </style>
+    <link rel="stylesheet" href="css/formulario.css"/>
 </head>
 <body>
 
@@ -121,7 +54,7 @@
 
         <fieldset class="fieldset-pergunta">
             <legend>4. Qual projeto ou ideia você pretende desenvolver primeiro?</legend>
-            <textarea id="projeto_ideia" name="projeto_ideia" rows="3" placeholder="Ex: Um semáforo com Arduino, automação residencial com ESP32..."></textarea>
+            <textarea id="projeto_ideia" name="projeto_ideia" rows="3" placeholder="Ex: Um semáforo com Arduino..."></textarea>
         </fieldset>
 
         <input type="submit" value="Enviar Respostas" class="btn-enviar">
