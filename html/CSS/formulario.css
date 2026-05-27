@@ -1,109 +1,59 @@
-/* Configurações Globais e Reset */
+
+/* 1. CONFIGURAÇÃO DA TELA */
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #f4f7f6; /* Fundo cinza bem claro para dar contraste */
-    color: #333333;
-    margin: 0;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    background-color: #f4f4f9; /* fundo do  site */
+    font-family: Arial;        /* Letra  */
+    text-align: center;       /* Joga a caixa do formulário no meio da tela */
+    padding-top: 30px;      
 }
 
-/* Títulos */
+/* 2. TEXTOS DA PÁGINA */
 h2 {
-    color: #006468; /* O tom clássico do Arduino */
-    margin-bottom: 5px;
-    text-align: center;
+    color: #006468;            
 }
 
-.sub {
-    color: #666666;
-    font-size: 0.95rem;
-    margin-top: 0;
-    margin-bottom: 25px;
-    text-align: center;
+p {
+    color: gray;               /* Texto de apoio  */
 }
 
-/* Estrutura do Formulário */
+/* 3. A CAIXA DO FORMULÁRIO */
 form {
-    width: 100%;
-    max-width: 600px; /* Limita a largura para leitura confortável */
-    background: #ffffff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); /* Sombra suave */
+    background-color: #e6f4f4; /*  menu */
+    width: 400px;                /* Largura fixa  */
+    margin: 0 auto;              /* Alinha a caixa  no centro */
+    padding: 20px;              
+    border: 2px solid #006468;   /* Borda com o verde escuro */
+    text-align: left;            /* Faz as perguntas ficarem retas na esquerda */
 }
 
-/* Blocos de Perguntas (Fieldset) */
-.fieldset-pergunta {
-    border: 1px solid #e0e0e0;
-    border-radius: 6px;
-    padding: 15px 20px;
-    margin-bottom: 20px;
-    background-color: #fafafa;
-}
-
-legend {
-    font-weight: bold;
-    color: #333333;
-    padding: 0 8px;
-    font-size: 0.95rem;
-}
-
-/* Espaçamento das Opções e Alinhamento */
-input[type="radio"], 
-input[type="checkbox"] {
-    margin-right: 8px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    cursor: pointer;
-    accent-color: #006468; /* Muda a cor da bolinha/check para o verde do Arduino */
-}
-
-label {
-    font-size: 0.9rem;
-    cursor: pointer;
-    user-select: none; /* Impede seleção acidental de texto ao clicar rápido */
-}
-
-/* Campo de Texto (Textarea) */
-textarea {
-    width: 100%;
-    box-sizing: border-box; /* Garante que o padding não estoure a largura */
-    border: 1px solid #cccccc;
-    border-radius: 4px;
+/* 4. AS CAIXAS DE CADA PERGUNTA */
+fieldset {
+    background-color: white;  /* Fundo de cada bloco fica branco limpo */
+    border: 1px solid gray;   /* Bordinha cinza */
+    margin-bottom: 15px;     
     padding: 10px;
-    font-family: inherit;
-    font-size: 0.9rem;
-    resize: vertical; /* Permite esticar apenas para baixo */
-    margin-top: 8px;
 }
 
-textarea:focus {
-    outline: none;
-    border-color: #006468;
-    box-shadow: 0 0 0 2px rgba(0, 100, 104, 0.2);
+/* 5. OS ENUNCIADOS DAS PERGUNTAS */
+legend {
+    color: #006468;            /* Letras em verde escuro */
+    font-weight: bold;        /* o texto em negrito */
 }
 
-/* Botão de Enviar */
-.btn-enviar {
-    background-color: #006468;
-    color: #ffffff;
-    border: none;
-    border-radius: 4px;
-    padding: 12px 20px;
-    font-size: 1rem;
-    font-weight: bold;
-    cursor: pointer;
-    width: 100%; /* Botão largo em dispositivos móveis */
-    transition: background-color 0.2s ease;
+/* 6. CONFIGURAÇÃO DAS CAIXAS DE ESCREVER (NOME, EMAIL, CIDADE) */
+input[type="text"] {
+    width: 100%;            
+    padding: 5px;            
+    margin-top: 5px;          
 }
 
-.btn-enviar:hover {
-    background-color: #004d50; /* Tom ligeiramente mais escuro no hover */
-}
-
-.btn-enviar:active {
-    transform: scale(0.99); /* Efeito sutil de clique */
-}
+/* 7. O BOTÃO DE ENVIAR */
+input[type="submit"] {
+    background-color: rgb(6, 141, 96); /* O verde médio dos seus botões */
+    color: white;                     
+    width: 100%;                       
+    padding: 12px;                    
+    font-weight: bold;                
+    border: none;                 
+    cursor: pointer;                   /* Transforma o mouse na mãozinha de clique */
+}   

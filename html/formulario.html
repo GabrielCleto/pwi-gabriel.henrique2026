@@ -2,62 +2,51 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Questionário - Iniciante em Embarcados</title>
+    <title>Meu Primeiro Formulário</title>
     <link rel="stylesheet" href="css/formulario.css"/>
 </head>
 <body>
 
-    <h2>Quiz para Iniciantes</h2>
-    <p class="sub">Teste seus conhecimentos básicos sobre Sistemas Embarcados e Eletrônica!</p>
+    <h2>Formulario</h2>
+    <p>Preencha os campos abaixo para testar o site!</p>
 
     <form action="#" method="POST">
         
-        <fieldset class="fieldset-pergunta">
-            <legend>1. Qual das seguintes placas é um Microcontrolador comum para iniciantes?</legend>
-            <input type="radio" id="p1_op1" name="placa_micro" value="arduino_uno">
-            <label for="p1_op1">Arduino Uno</label><br>
-            
-            <input type="radio" id="p1_op2" name="placa_micro" value="raspberry_pi4">
-            <label for="p1_op2">Raspberry Pi 4 (Mini Computador)</label><br>
-            
-            <input type="radio" id="p1_op3" name="placa_micro" value="desktop">
-            <label for="p1_op3">Computador Desktop Comum</label>
+        <fieldset>
+            <legend>Qual é o seu nome completo?</legend>
+            <input type="text" name="nome_usuario" placeholder="Digite seu nome aqui">
         </fieldset>
 
-        <fieldset class="fieldset-pergunta">
-            <legend>2. Quais destes componentes são considerados ATUADORES? (Selecione todos que se aplicam)</legend>
-            <input type="checkbox" id="comp1" name="atuadores" value="led">
-            <label for="comp1">LED (Diodo Emissor de Luz)</label><br>
-            
-            <input type="checkbox" id="comp2" name="atuadores" value="lm35">
-            <label for="comp2">Sensor de Temperatura LM35</label><br>
-            
-            <input type="checkbox" id="comp3" name="atuadores" value="servo_motor">
-            <label for="comp3">Servo Motor</label><br>
-            
-            <input type="checkbox" id="comp4" name="atuadores" value="buzzer">
-            <label for="comp4">Buzzer (Sinalizador sonoro)</label>
+        <fieldset>
+            <legend>Qual é o seu melhor e-mail?</legend>
+            <input type="text" name="email_usuario" placeholder="nome@email.com">
         </fieldset>
 
-        <fieldset class="fieldset-pergunta">
-            <legend>3. Qual é a principal função de um Resistor em um circuito eletrônico?</legend>
-            <input type="radio" id="p3_op1" name="funcao_resistor" value="armazenar">
-            <label for="p3_op1">Armazenar energia elétrica como uma bateria.</label><br>
-            
-            <input type="radio" id="p3_op2" name="funcao_resistor" value="limitar">
-            <label for="p3_op2">Limitar e opor resistência à passagem da corrente elétrica.</label><br>
-            
-            <input type="radio" id="p3_op3" name="funcao_resistor" value="processar">
-            <label for="p3_op3">Processar códigos e linhas de comando.</label>
+        <fieldset>
+            <legend>De qual cidade você é?</legend> 
+            <input type="text" name="cidade_usuario" placeholder="Ex: São Paulo">
         </fieldset>
 
-        <fieldset class="fieldset-pergunta">
-            <legend>4. Qual projeto ou ideia você pretende desenvolver primeiro?</legend>
-            <textarea id="projeto_ideia" name="projeto_ideia" rows="3" placeholder="Ex: Um semáforo com Arduino..."></textarea>
+        <fieldset>
+            <legend>Qual o seu nível em eletrônica?</legend>
+            <input type="radio" id="nivel1" name="nivel" value="iniciante">
+            <label for="nivel1">Comecei hoje também</label><br>
+            
+            <input type="radio" id="nivel2" name="nivel" value="sabe_um_pouco">
+            <label for="nivel2">Já sei ligar um LED</label>
         </fieldset>
 
-        <input type="submit" value="Enviar Respostas" class="btn-enviar">
+        <fieldset>
+            <legend>Quais componentes você já tem em casa?</legend>
+            <input type="checkbox" id="comp1" name="componentes" value="arduino">
+            <label for="comp1">Placa Arduino</label><br>
+            
+            <input type="checkbox" id="comp2" name="componentes" value="leds">
+            <label for="comp2">Luzinhas LED</label>
+        </fieldset>
+
+        <input type="submit" value="Enviar Dados Agora!">
+
     </form>
 
 </body>
