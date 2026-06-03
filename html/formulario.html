@@ -12,24 +12,27 @@
 
     <form action="#" method="POST">
         
-        <fieldset>
+        <fieldset> 
             <legend>Qual é o seu nome completo?</legend>
-            <input type="text" name="nome_usuario" placeholder="Digite seu nome aqui">
+            <input type="text" id="nome" name="nome_usuario" placeholder="Digite seu nome aqui" oninput="contarLetras()">
+            
+            <p id="contador" style="font-size: 12px; color:     gray; margin-top: 5px;">0 caracteres</p>
         </fieldset>
 
         <fieldset>
             <legend>Qual é o seu melhor e-mail?</legend>
             <input type="text" name="email_usuario" placeholder="nome@email.com">
+              <p id="contadorEmail" style="font-size: 12px; color: gray; margin-top: 5px;">0 caracteres</p>
         </fieldset>
 
         <fieldset>
             <legend>De qual cidade você é?</legend> 
-            <input type="text" name="cidade_usuario" placeholder="Ex: São Paulo">
+            <input type="text" name="cidade_usuario" placeholder="Ex: São Paulo"> 
         </fieldset>
 
         <fieldset>
-            <legend>Qual o seu nível em eletrônica?</legend>
-            <input type="radio" id="nivel1" name="nivel" value="iniciante">
+            <legend>Qual o seu nível em eletrônica?</legend> 
+            <input type="radio" id="nivel1" name="nivel" value="iniciante"> 
             <label for="nivel1">Comecei hoje também</label><br>
             
             <input type="radio" id="nivel2" name="nivel" value="sabe_um_pouco">
@@ -48,6 +51,8 @@
         <input type="submit" value="Enviar Dados Agora!">
 
     </form>
+
+    <script src="/JS/contador.js"></script>
 
 </body>
 </html>

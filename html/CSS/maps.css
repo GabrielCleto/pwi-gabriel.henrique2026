@@ -1,3 +1,19 @@
+/* margin = espaço externo do elemento */
+/* padding = espaço interno do elemento */
+/* width = largura */
+/* height = altura */
+/* overflow: hidden = esconde conteúdo que ultrapassa o limite */
+/* font-family = define a fonte do texto */
+/* background-color = cor de fundo */
+
+/* display: flex = ativa o Flexbox */
+/* flex-direction: column = organiza os elementos em coluna */
+
+/* color = cor do texto */
+/* font-size = tamanho da fonte */
+
+/* flex: 1 = ocupa o espaço disponível */
+/* border: none = remove a borda */
 html, body {
     margin: 0;
     padding: 0;

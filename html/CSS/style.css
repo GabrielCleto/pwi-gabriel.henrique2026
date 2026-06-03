@@ -1,4 +1,46 @@
 
+   /* * = seleciona todos os elementos */
+/* box-sizing: border-box = inclui padding e borda no tamanho total */
+/* margin = espaço externo */
+/* padding = espaço interno */
+
+/* height: 100% = ocupa toda a altura disponível */
+
+/* font-family = define a fonte */
+/* background-color = cor de fundo */
+
+/* display: flex = ativa o Flexbox */
+/* flex-direction: column = organiza os elementos em coluna */
+
+/* text-align: center = centraliza o texto */
+/* color = cor do texto */
+
+/* flex: 1 0 auto = ocupa o espaço restante disponível */
+
+/* width = largura do elemento */
+/* border-right = borda na direita */
+
+/* list-style-type: none = remove marcadores da lista */
+
+/* display: block = transforma em bloco */
+/* border-radius = arredonda os cantos */
+/* text-decoration: none = remove sublinhado */
+/* font-weight: bold = texto em negrito */
+/* transition = anima mudanças de estilo */
+
+/* :hover = efeito ao passar o mouse */
+/* transform: scale() = aumenta ou diminui o tamanho */
+
+/* flex: 1 = ocupa todo espaço disponível */
+
+/* border: none = remove a borda */
+/* box-shadow = adiciona sombra */
+
+/* flex-shrink: 0 = impede que o elemento diminua */
+
+/* @media = aplica regras para tamanhos específicos de tela */
+/* max-width: 768px = regras para telas até 768px */
+/* flex-direction: column = empilha os elementos verticalmente */
    * { 
     box-sizing: border-box; 
     margin: 0; 
