@@ -1,58 +1,167 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
-    <title>Meu Primeiro Formulário</title>
-    <link rel="stylesheet" href="css/formulario.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Formulário Completo</title>
+    
+    <link rel="stylesheet" href="css/formulario.css">
 </head>
+
 <body>
 
     <h2>Formulario</h2>
     <p>Preencha os campos abaixo para testar o site!</p>
 
-    <form action="#" method="POST">
-        
-        <fieldset> 
-            <legend>Qual é o seu nome completo?</legend>
+    <form id="formulario">
+
+        <div class="campo">
+            <label for="nome">Qual é o seu nome completo?</label>
             <input type="text" id="nome" name="nome_usuario" placeholder="Digite seu nome aqui" oninput="contarLetras()">
-            
-            <p id="contador" style="font-size: 12px; color:     gray; margin-top: 5px;">0 caracteres</p>
-        </fieldset>
+            <p id="contador" style="font-size: 12px; color: gray; margin-top: 5px;">0 caracteres</p>
+        </div>
 
-        <fieldset>
-            <legend>Qual é o seu melhor e-mail?</legend>
-            <input type="text" name="email_usuario" placeholder="nome@email.com">
-              <p id="contadorEmail" style="font-size: 12px; color: gray; margin-top: 5px;">0 caracteres</p>
-        </fieldset>
+        <div class="campo">
+            <label for="sobrenome">Sobrenome</label>
+            <input type="text" id="sobrenome" name="sobrenome" placeholder="Digite seu sobrenome">
+        </div>
 
-        <fieldset>
-            <legend>De qual cidade você é?</legend> 
-            <input type="text" name="cidade_usuario" placeholder="Ex: São Paulo"> 
-        </fieldset>
+        <div class="campo">
+            <label for="usuario">Nome de Usuário (@)</label>
+            <input type="text" id="usuario" name="usuario" placeholder="Ex: dev_maker">
+        </div>
 
-        <fieldset>
-            <legend>Qual o seu nível em eletrônica?</legend> 
-            <input type="radio" id="nivel1" name="nivel" value="iniciante"> 
-            <label for="nivel1">Comecei hoje também</label><br>
-            
-            <input type="radio" id="nivel2" name="nivel" value="sabe_um_pouco">
-            <label for="nivel2">Já sei ligar um LED</label>
-        </fieldset>
+        <div class="campo">
+            <label for="email">Qual é o seu melhor e-mail?</label>
+            <input type="email" id="email" name="email_usuario" placeholder="nome@email.com" oninput="contarLetrasEmail()">
+            <p id="contadorEmail" style="font-size: 12px; color: gray; margin-top: 5px;">0 caracteres</p>
+        </div>
 
-        <fieldset>
-            <legend>Quais componentes você já tem em casa?</legend>
-            <input type="checkbox" id="comp1" name="componentes" value="arduino">
-            <label for="comp1">Placa Arduino</label><br>
-            
-            <input type="checkbox" id="comp2" name="componentes" value="leds">
-            <label for="comp2">Luzinhas LED</label>
-        </fieldset>
+        <div class="campo">
+            <label for="senha">Escolha uma Senha</label>
+            <input type="password" id="senha" name="senha" placeholder="Mínimo 8 caracteres">
+        </div>
 
-        <input type="submit" value="Enviar Dados Agora!">
+        <div class="campo">
+            <label for="confirmarSenha">Confirme a sua Senha</label>
+            <input type="password" id="confirmarSenha" name="confirmarSenha" placeholder="Digite a senha novamente">
+        </div>
+
+        <div class="campo">
+            <label for="idade">Idade</label>
+            <input type="number" id="idade" name="idade" placeholder="Ex: 18">
+        </div>
+
+        <div class="campo">
+            <label for="dataNascimento">Data de Nascimento</label>
+            <input type="date" id="dataNascimento" name="dataNascimento">
+        </div>
+
+        <div class="campo">
+            <label for="telefone">Telefone / WhatsApp</label>
+            <input type="tel" id="telefone" name="telefone" placeholder="(11) 99999-9999">
+        </div>
+
+        <div class="campo">
+            <label for="cpf">CPF</label>
+            <input type="text" id="cpf" name="cpf" placeholder="000.000.000-00">
+        </div>
+
+        <div class="campo">
+            <label for="cep">CEP</label>
+            <input type="text" id="cep" name="cep" placeholder="00000-000">
+        </div>
+
+        <div class="campo">
+            <label for="cidade">De qual cidade você é?</label>
+            <input type="text" id="cidade" name="cidade_usuario" placeholder="Ex: São Paulo">
+        </div>
+
+        <div class="campo">
+            <label for="estado">Estado</label>
+            <select id="estado" name="estado">
+                <option value="">Selecione</option>
+                <option value="SP">São Paulo (SP)</option>
+                <option value="RJ">Rio de Janeiro (RJ)</option>
+                <option value="MG">Minas Gerais (MG)</option>
+                <option value="PR">Paraná (PR)</option>
+                <option value="BA">Bahia (BA)</option>
+            </select>
+        </div>
+
+        <div class="campo">
+            <label>Sexo</label>
+            <div style="margin-top: 5px;">
+                <input type="radio" id="sexoM" name="sexo" value="Masculino">
+                <label for="sexoM" style="font-weight: normal; color: #333; margin-left: 5px;">Masculino</label>
+            </div>
+            <div style="margin-top: 5px;">
+                <input type="radio" id="sexoF" name="sexo" value="Feminino">
+                <label for="sexoF" style="font-weight: normal; color: #333; margin-left: 5px;">Feminino</label>
+            </div>
+        </div>
+
+        <div class="campo">
+            <label>Qual o seu nível em eletrônica?</label>
+            <div style="margin-top: 5px;">
+                <input type="radio" id="nivel1" name="nivel" value="iniciante">
+                <label for="nivel1" style="font-weight: normal; color: #333; margin-left: 5px;">Comecei hoje também</label>
+            </div>
+            <div style="margin-top: 5px;">
+                <input type="radio" id="nivel2" name="nivel" value="sabe_um_pouco">
+                <label for="nivel2" style="font-weight: normal; color: #333; margin-left: 5px;">Já sei ligar um LED</label>
+            </div>
+        </div>
+
+        <div class="campo">
+            <label>Quais componentes você já tem em casa?</label>
+            <div style="margin-top: 5px;">
+                <input type="checkbox" id="comp1" name="componentes" value="arduino">
+                <label for="comp1" style="font-weight: normal; color: #333; margin-left: 5px;">Placa Arduino</label>
+            </div>
+            <div style="margin-top: 5px;">
+                <input type="checkbox" id="comp2" name="componentes" value="leds">
+                <label for="comp2" style="font-weight: normal; color: #333; margin-left: 5px;">Luzinhas LED</label>
+            </div>
+        </div>
+
+        <div class="campo full">
+            <label for="portfolio">Link do GitHub / Portfólio</label>
+            <input type="url" id="portfolio" name="portfolio" placeholder="https://github.com/seu-usuario">
+        </div>
+
+        <div class="campo full">
+            <label for="observacoes">Observações ou Mensagem</label>
+            <textarea id="observacoes" name="observacoes" placeholder="Escreva pelo menos 10 caracteres..."></textarea>
+        </div>
+
+        <div class="campo full">
+            <label for="arquivo">Enviar documento ou esquema do projeto</label>
+            <input type="file" id="arquivo" name="arquivo">
+        </div>
+
+        <div class="campo full">
+            <label for="satisfacao">Nível de satisfação com o teste</label>
+            <input type="range" id="satisfacao" name="satisfacao" min="0" max="100">
+        </div>
+
+        <div class="campo full checkbox-row">
+            <input type="checkbox" id="termos" name="termos">
+            <label for="termos" style="margin-bottom: 0; font-weight: normal; color: #333;">Li e aceito os termos de uso e privacidade.</label>
+        </div>
+
+        <div class="full" id="mensagemSucesso" style="display: none; background-color: #d4edda; color: #155724; padding: 15px; border-radius: 6px; text-align: center; font-weight: bold;"></div>
+
+        <div class="botoes">
+            <button type="submit" class="btn-enviar">Enviar Cadastro</button>
+            <button type="reset" class="btn-limpar">Limpar Tudo</button>
+        </div>
 
     </form>
 
-    <script src="/JS/contador.js"></script>
+    <script src="JS/javascript.js" defer></script>
 
 </body>
+
 </html>
