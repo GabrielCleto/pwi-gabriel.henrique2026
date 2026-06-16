@@ -1,46 +1,6 @@
-
-   /* * = seleciona todos os elementos */
-/* box-sizing: border-box = inclui padding e borda no tamanho total */
-/* margin = espaço externo */
-/* padding = espaço interno */
-
-/* height: 100% = ocupa toda a altura disponível */
-
-/* font-family = define a fonte */
-/* background-color = cor de fundo */
-
-/* display: flex = ativa o Flexbox */
-/* flex-direction: column = organiza os elementos em coluna */
-
-/* text-align: center = centraliza o texto */
-/* color = cor do texto */
-
-/* flex: 1 0 auto = ocupa o espaço restante disponível */
-
-/* width = largura do elemento */
-/* border-right = borda na direita */
-
-/* list-style-type: none = remove marcadores da lista */
-
-/* display: block = transforma em bloco */
-/* border-radius = arredonda os cantos */
-/* text-decoration: none = remove sublinhado */
-/* font-weight: bold = texto em negrito */
-/* transition = anima mudanças de estilo */
-
-/* :hover = efeito ao passar o mouse */
-/* transform: scale() = aumenta ou diminui o tamanho */
-
-/* flex: 1 = ocupa todo espaço disponível */
-
-/* border: none = remove a borda */
-/* box-shadow = adiciona sombra */
-
-/* flex-shrink: 0 = impede que o elemento diminua */
-
-/* @media = aplica regras para tamanhos específicos de tela */
-/* max-width: 768px = regras para telas até 768px */
-/* flex-direction: column = empilha os elementos verticalmente */
+/* ==========================================================================
+   Configurações Gerais
+   ========================================================================== */
    * { 
     box-sizing: border-box; 
     margin: 0; 
@@ -55,7 +15,7 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: #f4f4f9;
     display: flex;
-    flex-direction: column; /* Organiza Header, Section e Footer empilhados */
+    flex-direction: column; /* Organiza Header, Nav, Section e Footer empilhados na vertical */
 }
 
 /* ==========================================================================
@@ -69,40 +29,38 @@ header {
     font-size: 22px;
 }
 
-
-/* A section agora se comporta como a linha principal que estica verticalmente */
-section {
-    display: flex; /* Transforma em container flexível horizontal */
-    flex: 1 0 auto; /* Faz a seção ocupar todo o espaço útil que sobrar da tela */
-    background-color: #f1f1f1;
-}
-
-/* Coluna 1: Menu de Navegação Lateral (Esquerda) */
+/* ==========================================================================
+   Menu de Navegação Horizontal (Topo)
+   ========================================================================== */
 nav {
-    width: 25%; /* Mantém o menu proporcional à largura */
+    width: 100%; /* Ocupa toda a largura da tela */
     background: #e6f4f4;
-    padding: 20px;
-    border-right: 1px solid #ddd;
+    padding: 10px 20px; /* Reduzido o padding vertical para não ficar muito alto */
+    border-bottom: 1px solid #ddd; /* Separador inferior entre o menu e o conteúdo */
 }
 
+/* Esconde o título do menu no modo desktop para manter o visual limpo de barra de ferramentas */
 nav h3 { 
-    margin-bottom: 15px; 
-    color: #006468; 
+    display: none; 
 }
 
 nav ul { 
     list-style-type: none; 
+    display: flex; /* Ativa flexbox nos itens do menu */
+    flex-wrap: wrap; /* Se tiver muitos botões, eles quebram linha organizadamente */
+    justify-content: center; /* Centraliza os botões na horizontal */
+    gap: 10px; /* Cria um espaçamento uniforme entre os botões */
 }
 
 nav ul li { 
-    margin-bottom: 10px; 
+    margin-bottom: 0; /* Remove a margem inferior do layout antigo */
 }
 
-/* Estilização dos Botões do Menu Lateral */
+/* Estilização dos Botões (Mantendo sua estética exata) */
 nav ul li a {
     display: block;
     background-color: rgb(6, 141, 96);
-    padding: 12px;
+    padding: 10px 18px; /* Ajustado para encaixar melhor horizontalmente */
     text-align: center;
     border-radius: 8px;
     text-decoration: none;
@@ -116,27 +74,52 @@ nav ul li a:hover {
     transform: scale(1.02);
 }
 
-/* Coluna 2: Área Principal do Conteúdo (Direita) */
-article {
-    width: 75%;
-    padding: 10px;
-    display: flex;
-    flex-direction: column; /* Alinha o iframe e o texto na vertical interna */
+/* ==========================================================================
+   Área Principal do Conteúdo (Abaixo do Menu)
+   ========================================================================== */
+section {
+    display: flex; 
+    flex-direction: column; 
+    flex: 1; /* Faz a seção principal esticar e ocupar todo o meio do site */
+    background-color: #f1f1f1;
 }
 
-/* Configuração do Quadro Interativo (Iframe) */
+article {
+    width: 100%; 
+    padding: 15px; /* Margem sutil para o iframe não colar nos cantos da tela */
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; /* Centraliza a janela verticalmente */
+    align-items: center;     /* Centraliza a janela horizontalmente */
+    flex: 1; /* Força o article a preencher todo o espaço disponível até o rodapé */
+}
+
+/* Configuração do Quadro Interativo (A sua "Janela" de Exibição) */
 iframe {
     width: 100%;
-    flex: 1; /* O iframe se expande dinamicamente cobrindo o bloco cinza por completo */
+    max-width: 95%; /* Expande a largura para ocupar quase toda a extensão horizontal */
+    height: 78vh;   /* Aumenta drasticamente a altura para caber imagens grandes */
     border: none;
     background-color: white;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* Sombra suave para destacar o quadro */
+    display: block;
+    margin: 0 auto; /* Garante a centralização absoluta */
+}
+
+/* CORREÇÃO DO NAVEGADOR: Força imagens abertas direto no iframe a ficarem centralizadas */
+iframe img, 
+iframe::view-transition {
+    margin: auto !important;
+    display: block !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
+    object-fit: contain !important;
 }
 
 /* ==========================================================================
    Rodapé (Footer) - FIXADO E COLADO NA PARTE INFERIOR
-  */
+   ========================================================================== */
 footer {
     background-color: #006468;
     padding: 15px;
@@ -149,14 +132,16 @@ footer {
    Layout Responsivo (Celulares)
    ========================================================================== */
 @media (max-width: 768px) {
-    section {
-        flex-direction: column; /* No celular, o menu fica em cima e o conteúdo embaixo */
+    nav ul {
+        flex-direction: column; /* Em telas pequenas, os botões voltam a ficar empilhados */
+        width: 100%;
     }
-    nav, article { 
-        width: 100%; 
+    
+    nav ul li a {
+        width: 100%; /* Botões ocupam a largura total no celular para facilitar o clique */
     }
+
     iframe {
-        height: 450px; /* Altura fixa somente para telas de smartphones */
+        height: 450px; /* Altura controlada adaptada para telas de smartphones */
     }
 }
-

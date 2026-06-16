@@ -2,54 +2,77 @@
 <html lang="pt-br">
 <head>
     <title>Sistemas Embarcados - Portal</title>
+    
     <meta charset="utf-8">
+    
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    
     <link rel="stylesheet" href="CSS/style.css"/>
 </head>
 <body>
-<!-- header = cabeçalho da página -->
-<!-- section = seção principal do conteúdo -->
-<!-- nav = área de navegação com links -->
-<!-- ul =  não ordenada -->
-<!-- li = item da lista -->
-<!-- a = cria um link -->
-<!-- href = listadestino do link -->
-<!-- target = onde o link será aberto -->
-<!-- iframe = exibe outra página ou arquivo dentro da página -->
-<!-- article = conteúdo principal -->
-<!-- footer = rodapé da página -->
-<!-- src = arquivo carregado pelo iframe -->
-<!-- meta charset = define a codificação de caracteres -->
-<!-- meta viewport = adapta a página para celulares -->
-<!-- link stylesheet = conecta o arquivo CSS -->
-<header>
-    <h2>Guia de Embarcados & Eletrônica</h2>
-</header>
 
-<section> 
+    <header>
+        <h2>Guia de Embarcados & Eletrônica</h2>
+    </header>
+
     <nav>
-        <h3>Material de Apoio</h3>
         <ul>
-            <li><a href="imagens/arduino.png" target="janela">Pinagem Arduino</a></li>
-            <li><a href="imagens/esp32.png" target="janela">Pinagem ESP32</a></li>
-            <li><a href="imagens/raspberry.png" target="janela">GPIO Raspberry Pi</a></li>
-            <li><a href="imagens/resistores.png" target="janela">Tabela de Resistores</a></li>
-            <li><a href="imagens/Ide_Driver.png" target="janela">Instalação IDE + Driver</a></li>
-            <li><a href="imagens/Calcular_Resistencia.png" target="janela">Calcular Resistência</a></li>
+            <li><a href="imagens/arduino.png" target="janela" onclick="abrirImagemCentralizada(event, this.href)">Pinagem Arduino</a></li>
+            <li><a href="imagens/esp32.png" target="janela" onclick="abrirImagemCentralizada(event, this.href)">Pinagem ESP32</a></li>
+            <li><a href="imagens/raspberry.png" target="janela" onclick="abrirImagemCentralizada(event, this.href)">GPIO Raspberry Pi</a></li>
+            <li><a href="imagens/resistores.png" target="janela" onclick="abrirImagemCentralizada(event, this.href)">Tabela de Resistores</a></li>
+            <li><a href="imagens/Ide_Driver.png" target="janela" onclick="abrirImagemCentralizada(event, this.href)">Instalação IDE + Driver</a></li>
+            <li><a href="imagens/Calcular_Resistencia.png" target="janela" onclick="abrirImagemCentralizada(event, this.href)">Calcular Resistência</a></li>
+            
             <li><a href="formulario.html" target="janela">Preencher Formulário</a></li>
-            <li><a href="mapa.html" target="janela">Localização Fábrica Arduino</a></li>
+            <li><a href="mapa.html" target="janela">Historia do Arduino</a></li>
             <li><a href="videoAula.html" target="janela">Video Aula introdução</a></li>
         </ul>
     </nav>
-    
-    <article>
-        <iframe name="janela" src="imagens/boasvindas.png"></iframe>
-    </article>
-</section>
 
-<footer>
-    <p>Gabriel Cleto - 2026</p>
-</footer>
+    <section> 
+        <article>
+            <iframe name="janela" id="meuIframe" src=""></iframe>
+        </article>
+    </section>
+
+    <footer>
+        <p>Gabriel Cleto - 2026</p>
+    </footer>
+
+    <script>
+        function abrirImagemCentralizada(event, urlDaImagem) {
+            // 1. Impede o navegador de abrir a imagem do jeito teimoso padrão dele
+            event.preventDefault(); 
+            
+            // 2. Cria um código HTML invisível com as regras perfeitas de centralização para imagens 4K
+            const codigoHTMLInterno = `
+                <html>
+                <head>
+                    <style>
+                        body { margin:0; padding:0; background:#ffffff; display:flex; justify-content:center; align-items:center; height:100vh; overflow:hidden; }
+                        img { max-width:100%; max-height:100%; object-fit:contain; }
+                    </style>
+                </head>
+                <body>
+                    <img src="${urlDaImagem}">
+                </body>
+                </html>
+            `;
+            
+            // 3. Injeta esse código diretamente para dentro da sua "janela" (iframe)
+            const iframe = document.getElementById('meuIframe');
+            const doc = iframe.contentDocument || iframe.contentWindow.document;
+            doc.open();
+            doc.write(codigoHTMLInterno);
+            doc.close();
+        }
+
+        // Executa a função automaticamente assim que o site abre para centralizar a imagem de boas-vindas inicial
+        window.onload = function() {
+            abrirImagemCentralizada({ preventDefault: function(){} }, 'imagens/boasvindas.png');
+        };
+    </script>
 
 </body>
 </html>

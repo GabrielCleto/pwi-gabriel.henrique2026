@@ -1,53 +1,73 @@
-/* margin = espaço externo do elemento */
-/* padding = espaço interno do elemento */
-/* width = largura */
-/* height = altura */
-/* overflow: hidden = esconde conteúdo que ultrapassa o limite */
-/* font-family = define a fonte do texto */
-/* background-color = cor de fundo */
-
-/* display: flex = ativa o Flexbox */
-/* flex-direction: column = organiza os elementos em coluna */
-
-/* color = cor do texto */
-/* font-size = tamanho da fonte */
-
-/* flex: 1 = ocupa o espaço disponível */
-/* border: none = remove a borda */
+/* Configurações Gerais */
 html, body {
     margin: 0;
     padding: 0;
     width: 100%;
-    height: 100%;
-    overflow: hidden;
     font-family: Arial, Helvetica, sans-serif;
     background-color: #ffffff;
+    /* Mudamos de 'hidden' para 'auto' para permitir a rolagem da página entre a história e o mapa */
+    overflow-y: auto; 
 }
 
+/* Estilização da Seção da História */
+.historia-arduino {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.historia-arduino h1 {
+    color: #005F60; /* Verde característico do Arduino */
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.texto-historia {
+    font-size: 1rem !important; /* Sobrescreve o tamanho genérico do p */
+    color: #333333 !important;   /* Cor mais escura para leitura */
+    line-height: 1.6;           /* Espaçamento entre linhas confortável */
+    margin-bottom: 15px !important;
+}
+
+/* Linha divisória sutil */
+.divisor {
+    border: 0;
+    height: 1px;
+    background: #e0e0e0;
+    margin: 20px 0;
+}
+
+/* Estilização do Bloco do Mapa */
 .container-mapa {
     display: flex;
     flex-direction: column;
-    width: 100%;
-    height: 100%;
+    padding: 0 20px 20px 20px; /* Margens nas laterais e embaixo */
+    max-width: 800px;
+    margin: 0 auto;
+    height: 450px; /* Altura fixa para o bloco do mapa não sumir */
 }
 
-
+.topo-mapa {
+    margin-bottom: 10px;
+}
 
 h2 {
-    color: #006468;
+    color: #005F60;
     margin: 0;
-    font-size: 1.125rem; /* Equivalente a 18px, mas responsivo */
+    font-size: 1.25rem; 
 }
 
-p {
+.subtitulo-mapa {
     margin: 3px 0 0 0;
-    font-size: 0.75rem; /* Equivalente a 12px, mas responsivo */
+    font-size: 0.85rem; 
     color: #666666;
 }
 
 .mapa-interativo {
     flex: 1;
     width: 100%;
-    height: 100%; /* Garante o preenchimento total no eixo vertical */
+    height: 100%; 
     border: none;
+    border-radius: 8px; /* Cantos arredondados no mapa para um visual moderno */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Sombra leve no mapa */
 }
